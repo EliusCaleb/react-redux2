@@ -3,17 +3,17 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../actions";
 
 const Task = () => {
-   const dispatch = useDispatch()
-   const inputRef = useRef(null)
+  const dispatch = useDispatch();
+  const inputRef = useRef(null);
 
-   function addNewTask(){
-       const task = inputRef.current.value.trim()
+  function addNewTask() {
+    const task = inputRef.current.value.trim();
 
-       if(  task !== ''){
-           dispatch(addTodo(task))
-            inputRef.current.value= ' '
-       }
-   }
+    if (task !== "") {
+      dispatch(addTodo(task));
+      inputRef.current.value = "";
+    }
+  }
   return (
     <div className="task-component">
       <div className="add-task">
