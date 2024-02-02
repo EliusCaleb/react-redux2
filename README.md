@@ -1,8 +1,49 @@
-# React + Vite
+# How to set up the project
+Create a new React project by running the following command in your terminal. Replace "your-project-name" with the name of your project.
+```  
+npm create vite@latest your-project-name -- --template react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+cd your-project-name
 
-Currently, two official plugins are available:
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+```
+
+# How to install Redux
+```
+npm install \
+
+redux \
+
+react-redux \
+
+redux-thunk \
+
+redux-devtools-extension
+
+
+
+```
+
+# How to set up reducers 
+
+In the src directory, create a new folder called reducers, and inside that folder, create two new files: index.js and taskReducer.js.
+
+The index.js file represents the root reducer, which combines all the individual reducers in the application. In contrast, the taskReducer.js file is one of the individual reducers that will be combined in the root reducer.
+
+```
+import taskReducer from "./taskReducer";
+import { combineReducers } from "redux";
+
+const rootReducer = combineReducers({
+  tasks: taskReducer,
+});
+
+export default rootReducer;
+
+
+```
+use the following docs :
+
+https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/
